@@ -1,48 +1,60 @@
-# Projet-Bras-Robot-3D-360-
-Projet Arduino de Bras Robot utilisant des Potentiomètres 10K Ohm et des Servomoteurs Mg90.
+# Bras Robotique 3D – Contrôle par Arduino
+
+Projet de bras robotique imprimé en 3D, contrôlé par Arduino à l’aide de
+potentiomètres, de boutons poussoirs, de servomoteurs et d’un moteur DC.
 
 ## 🎯 Objectif
-Réaliser un Bras Robotique utilisant des Servomoteurs Angulaires Mg90 et un Moteur DC, Controlé a l'aide d'un Arduino, de trois potentiomètres 10K Ohm et Deux bouttons.
+Concevoir et réaliser un bras robotique capable de mouvements multi-axes,
+en combinant mécanique (impression 3D), électronique et programmation.
+
+## 🧩 Architecture du système
+- Interface utilisateur : potentiomètres et boutons poussoirs  
+- Unité de contrôle : Arduino Uno R4 WiFi  
+- Actionneurs : servomoteurs MG90 et moteur DC  
+- Structure mécanique : bras imprimé en PLA  
+- Alimentation : module MB-102 externe  
 
 ## 🧰 Matériel utilisé
-- Arduino Uno R4 WIFI (x1).
-- Servomoteurs Angulaires Mg90 (x3).
-- Moteur DC (x1).
-- Driver du Moteur DC (x1).
-- Potentiomètres (x3).
-- Bouttons Poussoirs (x2).
-- Module de Power Supply spéciale Breadboard MB-102 (x1).
-- Câbles Dupont Male-Male.
-- Câbles Dupont Male-Femelle.
-- BreadBoard (x1).
-- Mini BreadBoard (x1).
-- Structure du Bras Imprimé en PLA grâce a une Imprimante 3D.
+- Arduino Uno R4 WiFi (x1)
+- Servomoteurs MG90 (x3)
+- Moteur DC (x1)
+- Driver moteur DC (x1)
+- Potentiomètres 10kΩ (x3)
+- Boutons poussoirs (x2)
+- Module d’alimentation MB-102 (x1)
+- Breadboard et mini breadboard
+- Câbles Dupont
+- Structure imprimée en 3D (PLA)
 
 ## ⚙️ Fonctionnement
-Les potentiomètres envoient les données à l’Arduino.
-L'Arduino transforme les données des potentiomètres allant jusqu'a 1023 en position de Mg90 allant jusqu'a 180°.
-Les Bouttons envoient ensuite les données à l'Arduino qui contrôle le Moteur DC grâce au Driver.
+Les potentiomètres génèrent une valeur analogique (0 à 1023) lue par l’Arduino.
+Ces valeurs sont converties en angles de rotation (0 à 180°) pour piloter les
+servomoteurs MG90.
+
+Les boutons poussoirs permettent de commander le moteur DC via un driver,
+afin de contrôler un mouvement supplémentaire du bras.
 
 ## 💻 Logiciels
-- Arduino IDE (Programmation de L'arduino)
-- ThinkerCAD (Modélisation du Bras)
-- Bambu Studio (impression 3D)
+- Arduino IDE : programmation
+- Tinkercad : modélisation du bras
+- Bambu Studio : préparation et impression 3D
 
 ## 📷 Résultats
-(photos ou vidéo ici)
+*(Photos et/ou vidéo du bras robotique en fonctionnement)*
 
 ## 📈 Ce que j’ai appris
-- Lecture de Potentiomètre Traduite en Position de Servomoteur.
-- Utilisation d'une Alimentation Externe (Module d'Alimentation MB-102).
-- Conception d’un Bras imprimé en 3D.
+- Conversion d’entrées analogiques en commandes moteur
+- Pilotage de servomoteurs et moteur DC
+- Gestion d’une alimentation externe
+- Conception et impression 3D de pièces mécaniques
+- Intégration mécanique / électronique / logicielle
 
 ## 🚀 Améliorations possibles
-- Ajout du WiFi avec ESP32.
-- Ajout de Plus d'Axes d'Articulation sur le Bras.
-- Utilisation de Moteurs Pas à Pas (Steppers) à la Place des Mg90 et du moteur DC.
-- Modèlisation d'un Meilleur Modèle 3D de Bras.
-- Modèlisation d'un Boitier de contrôle pour les Potentiomètres et Autres.
-- Utilisation d'Encoders Rotatifs pour remplacer les Potentiomètres et les Bouttons.
-- Utilisation d'une Plaque de Prototypage.
-- Soudure des Composant pour de meilleurs connexions entre eux.
+- Ajout du WiFi (pilotage à distance)
+- Augmentation du nombre d’axes
+- Remplacement par des moteurs pas à pas
+- Utilisation d’encodeurs rotatifs
+- Amélioration du modèle 3D
+- Création d’un boîtier de commande
+- Soudure et passage sur plaque de prototypage
 
