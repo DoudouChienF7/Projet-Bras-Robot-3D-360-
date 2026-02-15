@@ -1,42 +1,40 @@
 #include <Servo.h> 
-// Inclusion de la bibliothèque Servo pour piloter les servomoteurs
+// Inclusion de la bibliothèque Servo
 
-// === Définition des broches ===
-
-// Broches des potentiomètres (entrées analogiques)
+// Potentiomètres
 int P1tPin = A5;   // Potentiomètre n°1
 int P2tPin = A4;   // Potentiomètre n°2
 int P3tPin = A3;   // Potentiomètre n°3
 
-// Broches des boutons poussoirs (entrées numériques)
+// Boutons
 int Button1Pin = 2;  // Bouton n°1 (sens 1 du moteur DC)
 int Button2Pin = 3;  // Bouton n°2 (sens 2 du moteur DC)
 
-// Broches du driver du moteur DC (sorties PWM)
+// Pins PWM du motor Driver
 int MotorINApin = 5; // Entrée IN1 du driver moteur
 int MotorINBpin = 6; // Entrée IN2 du driver moteur
 
-// === Déclaration des servomoteurs ===
+// Déclaration des sevo
 Servo m1servo;   // Servomoteur n°1
 Servo m2servo;   // Servomoteur n°2
 Servo m3servo;   // Servomoteur n°3
 
-// === Variables pour stocker les valeurs des potentiomètres ===
+// Variables pour stocker les valeurs des potentiomètres
 int v1l; // Valeur du potentiomètre n°1
 int v2l; // Valeur du potentiomètre n°2
 int v3l; // Valeur du potentiomètre n°3
 
 void setup() {
-  // Configuration des boutons en entrée avec résistance de pull-up interne
+  // Configuration des boutons en pull-up
   // (LOW quand le bouton est appuyé)
   pinMode(Button1Pin, INPUT_PULLUP);
   pinMode(Button2Pin, INPUT_PULLUP);
 
-  // Configuration des broches du moteur DC en sortie
+  // Configuration du moteur DC en sortie
   pinMode(MotorINApin, OUTPUT);
   pinMode(MotorINBpin, OUTPUT);
 
-  // Association des servomoteurs à leurs broches PWM
+  // Association des servomoteurs à leurs pins PWM
   m1servo.attach(9);
   m2servo.attach(11);
   m3servo.attach(10);
@@ -44,22 +42,22 @@ void setup() {
 
 void loop() {
 
-  // === Lecture et commande du servomoteur 1 ===
+  // Lecture et commande du servomoteur 1
   v1l = analogRead(P1tPin);           // Lecture du potentiomètre (0 à 1023)
   v1l = map(v1l, 0, 1023, 0, 180);    // Conversion en angle (0 à 180°)
   m1servo.write(v1l);                 // Positionnement du servomoteur
 
-  // === Lecture et commande du servomoteur 2 ===
+  // Lecture et commande du servomoteur 2
   v2l = analogRead(P2tPin);
   v2l = map(v2l, 0, 1023, 0, 180);
   m2servo.write(v2l);
 
-  // === Lecture et commande du servomoteur 3 ===
+  // Lecture et commande du servomoteur 3
   v3l = analogRead(P3tPin);
   v3l = map(v3l, 0, 1023, 0, 180);
   m3servo.write(v3l);
 
-  // === Commande du moteur DC avec boutons poussoirs ===
+  //Moteur DC avec boutons
 
   // Si le bouton 1 est appuyé → rotation dans le sens 1
   if (digitalRead(Button1Pin) == LOW) {
